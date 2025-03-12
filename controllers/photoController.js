@@ -32,7 +32,7 @@ exports.getPhotos = async (req, res) => {
     );
 
     const photos = result.rows.map(photo => {
-      return {...photo, url: 'http://localhost:4000/' + photo.filepath}
+      return {...photo, url: 'https://photo-website-417-s8hs.onrender.com' + photo.filepath}
     })
     
     res.status(200).json(photos);
@@ -50,7 +50,7 @@ exports.myPhotos = async (req, res) => {
       [userId]
     );
     const photos = resultUser.rows.map(photo => {
-      return {...photo, url: 'http://localhost:4000/' + photo.filepath}
+      return {...photo, url: 'https://photo-website-417-s8hs.onrender.com/' + photo.filepath}
     })
     
     res.status(200).json(photos);
